@@ -4,13 +4,13 @@
 
 
 namespace br0::concepts {
-    <template class>
+    template <class T>
     concept ux =
         std::is_integral_v<T> &&
         !std::is_signed_v<T>  &&
-        !std::is_same_v<std::remove_cv_t<T>, bool>;;
+        !std::is_same_v<std::remove_cv_t<T>, bool>;
 
-    <template class>
+    template <class T>
     concept ix =
         std::is_integral_v<T> &&
         std::is_signed_v<T>;
