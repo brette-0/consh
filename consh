@@ -3,7 +3,7 @@
 #include <type_traits>
 
 
-namespace br0::concepts {
+namespace br0::consh {
     template <class T>
     concept ux =
         std::is_integral_v<T> &&
@@ -20,4 +20,9 @@ namespace br0::concepts {
 
     template <class T>
     concept ax = ux<T> || ix<T> || fx<T>;
+
+    template <class T>
+    concept nx =
+        (ix<T> || ux<T>) &&
+        !fx<T>;
 }
